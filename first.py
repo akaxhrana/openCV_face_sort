@@ -32,7 +32,7 @@ for (i, imagePath) in enumerate(imagePaths):
         knownNames.append(name)
 
 #save emcodings along with their names in dictionary data
-data = {"encodings": knownEncodings, "names": knownNames}
+data = {"encodings": knownEncodings, "labels": knownNames}
 
 #use pickle to save data into a file for later use
 f = open("face_enc", "wb")
