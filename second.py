@@ -15,6 +15,7 @@ data = pickle.loads(open('face_enc', "rb").read())
 #Find path to the input directory you want to detect face 
 for im in os.listdir(in_dir):
 
+    # read the image with the absolute path
     image = cv2.imread(in_dir+im)
     rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
     
@@ -49,7 +50,7 @@ for im in os.listdir(in_dir):
             for i in matchedIndex:
 
                 #Check the names at respective indexes we stored in matchedIndex
-                name = data["names"][i]
+                name = data["labels"][i]
 
                 #increase count for the name we got
                 counts[name] = counts.get(name, 0) + 1
